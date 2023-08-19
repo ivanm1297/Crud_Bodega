@@ -1,0 +1,120 @@
+<div id="formulario_empleados">
+    <div class="modal fade" id="empleados" tabindex="-1" aria-labelledby="swModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content" id="content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titulo_modal">REGISTRO DE ADMINISTRADORES DEL SIBUMB</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="smartwizard_empleado" dir="rtl-">
+                        <ul class="nav nav-progress">
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <div class="num">1</div>
+                                    Información personal
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
+                                <form id="form-empleado-1" class="row row-cols-2 ms-5 me-5 needs-validation" novalidate>
+                                    <div class="col">
+                                        <label for="nombre_empleado" class="form-label">Nombre
+                                            completo</label>
+                                        <input type="text" name="nombre_empleado" id="nombre_empleado" class="form-control"
+                                            placeholder="Nombre completo" minlength="3" maxlength="50" required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="apellidos_empleado" class="form-label">Apellidos Empleado</label>
+                                        <input type="text" name="apellidos_empleado" id="apellidos_empleado" class="form-control"
+                                            placeholder="Apellido Paterno" minlength="3" maxlength="50" required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="domicilio_empleado" class="form-label">Domicilio</label>
+                                        <input type="text" name="domicilio_empleado" id="domicilio_empleado" class="form-control"
+                                            placeholder="Domicilio" minlength="3" maxlength="50" required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="correo_empleado" class="form-label">Correo electrónico</label>
+                                        <input type="email" name="correo_empleado" id="correo_empleado" class="form-control"
+                                            placeholder="correo" minlength="3" maxlength="50" required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="psw_empleado" class="form-label">Password</label>
+                                        <input type="password" name="psw_empleado" id="psw_empleado" class="form-control"
+                                            placeholder="psw" minlength="3" maxlength="50" required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="telefono_empleado" class="form-label">Telefono</label>
+                                        <input type="text" name="telefono_empleado" id="telefono_empleado"
+                                            placeholder="Telefono" class="form-control" minlength="10" maxlength="10"
+                                            required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="n_lote_empleado_act" class="form-label">Numero de lote</label>
+                                            <select name="n_lote_empleado_act" id="n_lote_empleado_act" class="form-select">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>                                                
+                                            </select>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" id="btnFinish" onclick="registrarEmpleado()">Registrar</button>
+                    <button class="btn btn-danger" onclick="onCancel()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

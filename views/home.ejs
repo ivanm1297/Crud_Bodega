@@ -1,0 +1,42 @@
+<%- include('head') %>
+    <div id="titulo">
+
+    </div>
+    <!-- Apertura de login -->
+    <div id="contenedor">
+        <div class="modal-dialog modal-login" id="login">
+            <div class="modal-content" id="cont">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="images/user.jpeg" alt="Avatar">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form action="/admin" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Usuario"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+                <% if (typeof error !=='undefined' ) { %>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <%= error %>
+                    </div>
+                <% } %> 
+                        <div class="modal-footer">
+                            <a href="#">Registrarme</a>
+                        </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('foot') %>

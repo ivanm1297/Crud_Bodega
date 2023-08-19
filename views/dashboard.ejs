@@ -1,0 +1,64 @@
+<%- include('head') %>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo de la umb" class="img-fluid  logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <div class="row align-items-center">
+                    <!-- Columna de la imagen -->
+                    <div class="col-auto">                       
+                        <img src="images/user.png" id="foto_user" alt="Fotografía del usuario">                        
+                    </div>
+                    <!-- Columna del ícono del botón del menú desplegable -->
+                    <div class="col">
+                        <span class="navbar-toggler-icon"></span>
+                    </div>
+                </div>
+
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-center" id="offcanvasNavbarLabel" style="color:white;"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <h4  class="text-center" id="titulo_menu">  LOTES</h4>
+                    <h5 class="text-center" id="titulo_menu">ADMINISTRADOR: <%= user && user.Nombre_usuario ? (user.Nombre_usuario + ' ' + user.Apellido_Paterno).toUpperCase() : 'USUARIO' %></h5>
+                    <div id="usuarioEnSesion" data-id="<%= user._id %>"></div>
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-users"></i> Usuarios</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <button class="dropdown-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btnCargarUsuarios"><i class="fas fa-chalkboard-teacher"></i> Empleados</button>
+                                <button class="dropdown-item" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btnCargarLotes"><i class="fas fa-chalkboard-teacher"></i> Lotes</button>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <form action="/logout" method="POST">
+                                <button type="submit" class="nav-link active" aria-current="page"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion </button>
+                            </form>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="titulo">
+
+    </div>
+
+    <div id="actualizable">
+        
+    </div>
+
+    <%- include('formulario_empleados')%>
+    <%- include('formulario_empleados_act')%>
+    <%- include('formulario_lotes', {responsables: responsables} )%>
+    <%- include('foot') %>

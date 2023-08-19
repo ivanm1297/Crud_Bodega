@@ -1,0 +1,89 @@
+<div id="formulario_lotes">
+    <div class="modal fade" id="lotes" tabindex="-1" aria-labelledby="swModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content" id="content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titulo_modal">REGISTRO DE LOTES</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="smartwizard_lote" dir="rtl-">
+                        <ul class="nav nav-progress">
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <div class="num">1</div>
+                                    Información del Lote
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
+                                <form id="form-lote-1" class="row row-cols-2 ms-5 me-5 needs-validation" novalidate>
+                                    <div class="col">
+                                        <label for="fecha_expiracion" class="form-label">Fecha de expiracion</label>
+                                        <input type="date" name="fecha_expiracion" id="fecha_expiracion"
+                                            class="form-control" placeholder="Nombre completo" minlength="3"
+                                            maxlength="50" required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="hora_expiracion" class="form-label">Hora de expiracion</label>
+                                        <input type="time" name="hora_expiracion" id="hora_expiracion"
+                                            class="form-control" placeholder="Apellido Paterno" minlength="3"
+                                            maxlength="50" required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="responsable" class="form-label">Responsable</label>
+                                        <select name="responsable" id="responsable" class="form-select" required>
+                                            <option selected>Seleciona un responsable</option>
+                                            <% responsables.forEach(responsable=> { %>
+                                                <option value="<%= responsable.nombre_empleado %>">
+                                                    <%= responsable.nombre_empleado %>
+                                                </option>
+                                            <% })%>
+                                        </select>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="observaciones" class="form-label">observaciones</label>
+                                        <input type="text" name="observaciones" id="observaciones" class="form-control"
+                                            placeholder="escribe algunas observaciones" minlength="3" maxlength="200" required>
+                                        <div class="valid-feedback">
+                                            Correcto!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Datos faltantantes o incorrectos.
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" id="btnFinish" onclick="registrarlote()">Registrar</button>
+                    <button class="btn btn-danger" onclick="onCancel_lote()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

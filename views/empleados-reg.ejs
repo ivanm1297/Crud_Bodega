@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h3> Empleados</h3>
+    </div>
+
+    <div class="text-center mt-3">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#empleados">
+            <i class="fas fa-plus"></i> Nuevo
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-md mx-auto" id="tabla_admin">
+                <!--Agregar la clase 'table-sm' para reducir el tamano de la tabla-->
+                <thead>
+
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Domicilio</th>
+                        <th scope="col">Correo electrónico</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <% empleados.forEach(empleado=>{ %>                   
+                        <tr>                         
+                            <td><%= empleado.nombre_empleado %></td>
+                            <td><%= empleado.aps_empleado %></td>
+                            <td><%= empleado.domicilio_empleado %></td>
+                            <td><%= empleado.correo %></td>
+                            <td><%= empleado.telefono%></td>                          
+                            <td>
+                                <button class="btn btn-primary btn-editar-usuario" data-id="<%= empleado._id %>" title="Editar usuario" onclick="llenar_modal('<%= empleado._id %>')"><i class="fas fa-pencil-alt"></i></button>
+                                <button class="btn btn-danger btn-eliminar" data-id="<%= empleado._id %>"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer text-muted text-center">
+        UESSJR
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h3> Lotes</h3>
+    </div>
+
+    <div class="text-center mt-3">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#lotes">
+            <i class="fas fa-plus"></i> Nuevo
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-md mx-auto" id="tabla_lotes">
+                <!--Agregar la clase 'table-sm' para reducir el tamano de la tabla-->
+                <thead>
+
+                    <tr>
+                        <th scope="col">No Lote</th>
+                        <th scope="col">Fecha de expiracion</th>
+                        <th scope="col">Hora de expiracion</th>
+                        <th scope="col">Responsable</th>
+                        <th scope="col">Observaciones</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% lotes.forEach(lote=>{ %>
+                        <tr>
+                            <td>
+                                <%= lote._id %>
+                            </td>
+                            <td>
+                                <%= lote.fecha_expiracion.toDateString() %>
+                            </td>
+                            <td>
+                                <%= lote.hora_expiracion %>
+                            </td>
+                            <td>
+                                <%= lote.responsable %>
+                            </td>
+                            <td>
+                                <%= lote.observaciones%>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary btn-editar-lote" data-id="<%= lote._id %>"
+                                    title="Editar lote" onclick="llenar_modal_lote('<%= lote._id %>')"><i
+                                        class="fas fa-pencil-alt"></i></button>
+                                <button class="btn btn-danger btn-eliminar-lote" data-id="<%= lote._id %>"><i
+                                        class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer text-muted text-center">
+        UESSJR
+    </div>
+</div>
